@@ -1,0 +1,53 @@
+class Pessoa {
+    private String nome;
+    private int idade;
+    
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+    public void impDados() {
+        System.out.println("Nome: " + nome + ", Idade: " + idade);
+    }
+    
+    public String getNome() {
+        return nome;
+    }
+    
+    public int getIdade() {
+        return idade;
+    }
+
+    public static void main(String[] args) {
+        double[] notas = {9.5, 9.0, 9.0};
+        Aluno aluno = new Aluno("Andressa", 35, notas);
+        aluno.impDados();
+        aluno.impNota(10.0);  
+        aluno.impNota(notas);
+    }
+}
+
+class Aluno extends Pessoa {
+    private double[] notas;
+
+    public Aluno(String nome, int idade, double[] notas) {
+        super(nome, idade);
+        this.notas = notas;
+    }
+    public void imprimirDados() {
+        super.impDados(); 
+        System.out.println("Notas:");
+        for (double nota : notas) {
+            System.out.println(nota);
+        }
+    }
+
+    public void impNota(double nota) {
+        System.out.println(nota);   }
+
+    public void impNota(double[] notas) {
+        for (double nota : notas) {
+            System.out.println(nota);
+        }
+    }
+}
