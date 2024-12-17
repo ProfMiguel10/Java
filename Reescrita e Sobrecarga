@@ -34,7 +34,7 @@ class Aluno extends Pessoa {
         super(nome, idade);
         this.notas = notas;
     }
-    public void imprimirDados() {
+    public void impDados() {
         super.impDados(); 
         System.out.println("Notas:");
         for (double nota : notas) {
